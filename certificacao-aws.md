@@ -833,16 +833,16 @@ Acessando a API de meta-dados de EC2 e possível acessar informações sobre div
 ## AWS Elastic Beanstalk
 
 - Feito para o desenvolvedor, permite ter uma visão centralizada do ambiente de deployado.
-- Usados para aplicações web, ex cria toa infra estrutura e só precisa passar o pacote que será usando. ex.  (war para o tomcat).
-- Usa todos os componetes do aws (ec2, S3 ..).
+- Usados para aplicações web, ex: cria toa infraestrutura e só precisa passar o pacote que será usando. ex.  (war para o tomcat).
+- Usa todos os componentes do AWS (ec2, S3 ..).
 - Seria uma PAAS.
-- O serviço do Beanstalk é free, o uso dele não é cobrado, apenas os componentes usados serão cobrados.
-- É totalmente gerenciado pela Amazon.
-- Usa como base o Could formation para criar os recursos.
+- O serviço do Beanstalk é gratis, o uso dele não é cobrado, apenas os **componentes usados serão cobrados.**
+- É totalmente gerenciado pela AWS.
+- Usa como base o CouldFormation para criar os recursos.
 - **Componetes**
-  - Aplicação  - Aplicação em si.
-  - Versão da aplicação -  define a versão da aplicação.
-  - Ambiente - Ambiente onde a aplicação pode ser disponibilida.
+  - **Aplicação**  - Aplicação em si.
+  - **Versão da aplicação** -  define a versão da aplicação.
+  - **Ambiente** - Ambiente onde a aplicação pode ser disponibiliza.
     - Web tier   - usa uma balanciador de cargas.
     - Worker tier - usa filas.
 
@@ -856,13 +856,13 @@ Acessando a API de meta-dados de EC2 e possível acessar informações sobre div
 
 ## Amazon ECS
 
-- Elastic Container Service - Serviço de container proprietário da AWS.
+- Elastic Container Service - **Serviço de container proprietário da AWS.**
 
 - Você deve prover e manter a infraestrutura (instâncias EC2). Ou usa o **Fargate** que abstrai esse gerenciamento.
 
-- Não te tem custo, só paga as maquinas usadas (EC2).
+- Não te tem custo, só paga as maquinas usadas (EC2, EBS ...).
 
-- Para se subir container, primeiro é necessário configurar uma ECS Task, ele descreve com será construido o container, seria algo semelhante como um arquivo docker-compose. E na Task que se define as políticas de acesso a recursos que a aplicação vai usar alem de rede e grupo de segurança.
+- Para se subir container, primeiro é necessário configurar uma **ECS Task**, ele descreve com será construido o container, seria algo semelhante como um arquivo **docker-compose**. E na Task que se define as políticas de acesso a recursos que a aplicação vai usar alem de rede e grupo de segurança.
 
 - As Task podem ser disparadas pelo **Event Brigde**, isso dispara a execução do ECS. 
 
@@ -886,12 +886,12 @@ Acessando a API de meta-dados de EC2 e possível acessar informações sobre div
 
 ## Amazon EKS
 
-- Amazon Elastic Kubernetes Service 
-- Serviço de kubernetes totalmente gerenciado pela AWS.
-- Custo de $0,1 por hora por cluster kubernet ($75$ por mês) mais os recurso (EC2, EBS).
+- Amazon Elastic Kubernetes Service.
+- Serviço de **kubernetes** totalmente gerenciado pela AWS.
+- Custo de **$0,1** por hora por cluster kubernete ($75$ por mês) mais os recurso (EC2, EBS).
 - Deploy complexo, requer uma pessoa que manja.
 - É Open source assim caso migre de nuvem terá mais facilidade no processo.
-- Usa o registry ECR para armazenar as imagens.
+- Usa o **ECR** para armazenar as imagens.
 
 
 
@@ -905,13 +905,13 @@ Acessando a API de meta-dados de EC2 e possível acessar informações sobre div
 
 - Trabalha com eventos.
 
-- Tem de 128 MB ate 10 GB de memoria que pode ser usado.
+- Tem de **128 MB** ate **10 GB** de memoria que pode ser usado.
 
 - Tem escopo regional.
 
-- Pague por milissegundo usado para executar o código.
+- Pague por **milissegundo** usado para executar o código.
 
-- Serveless (não tem servidor para se preocupar).
+- **Serveless** (não tem servidor para se preocupar).
 
 - Se preocupe apenas com a aplicação não com a infraestrutura.
 
@@ -921,11 +921,11 @@ Acessando a API de meta-dados de EC2 e possível acessar informações sobre div
 
 - Altamente disponível e totalmente tolerante a falha.
 
-- Tempo de execução de ate 15 minutos.
+- Tempo de execução de ate **15 minutos.**
 
 - Cobrado de 100 em 100 milissegundos de uso.
 
-- Faz escalonamento horizontal e pode ter ate 999 execução simultâneas.
+- Faz escalonamento horizontal e pode ter **ate 999 execução simultâneas.**
 
 - Limitações
 
@@ -953,8 +953,8 @@ Acessando a API de meta-dados de EC2 e possível acessar informações sobre div
 
 ![step-function](certificacao-aws.assets/image-20210911102112816.png)
 
-- Permite criar uma workflow para orquestrar Lambdas functions.
-- O Fluxo (flow) é representado o com maquina de estado Json.
+- Permite criar uma **workflow** para orquestrar **Lambdas functions**.
+- O Fluxo (flow) é representado o com **maquina de estado Json.**
 - Pode configurar para executar lambda sequencialmente, paralelas, com condições, e timeouts ..
 - O workflow pode ser executado por no máximo 1 ano, após isso é necessário aprovar por mais 1 ano.
 
