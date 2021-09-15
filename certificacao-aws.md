@@ -525,6 +525,16 @@ No caso do AWS, refere-se as multi AZs, que dão a segurança de que caso uma fi
 	- Uma CPU, seria um core de um processador, pode conter varias threads.
 	- Uma vCPU seria cada uma dessas threads.
 	- É possível especificar qual a configuração de vCPU você precisa, por exemplo para uma aplicação node que é single thead pode se definir 1 vCPU.
+	
+- **Placement Groups** - Grupos de Posicionamento
+
+  - Permite decide a estratégia posicionamento das instâncias EC2. ou seja onde vai ficar as instâncias de vai ser:
+
+    - **Cluster** - Todas ais instâncias ficam juntas, tem baixa latência, mas ficam numa única AZ. (alta performance, mas tem um alto risco).
+    - **Spread** - (espalhadas) As instâncias ficar  espalhadas em servidores em diferentes AZ, com uma máximo de 7 por grupo por AZ. Usados em aplicações criticas.
+    - **Partition** - Similar ao **Spread**, mas as instâncias ficam espalhadas em diferentes partições (conjunto de Racks) numa AZ. Pode escalar para centenas de instâncias por grupo, usadas com o Hadoop, Kafka, Cassandra.
+
+    ![AWS - Placement Groups](certificacao-aws.assets/placementgroups.jpg)
 
 ------
 
